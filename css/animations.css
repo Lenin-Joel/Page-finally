@@ -1,0 +1,14 @@
+/* animations.css */
+@keyframes floaty {
+  0%{transform:translateY(0)}
+  50%{transform:translateY(-8px)}
+  100%{transform:translateY(0)}
+}
+@keyframes typing {
+  from{width:0}
+  to{width:100%}
+}
+
+/* small helpers */
+.fade-in{animation:fadeIn 900ms ease both}
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}

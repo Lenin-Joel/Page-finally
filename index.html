@@ -1,1 +1,257 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Portafolio Académico - Lenin Toaquiza</title>
+  <meta name="description" content="Portafolio académico de Lenin Toaquiza - Universidad Técnica de Cotopaxi" />
 
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <meta name="theme-color" content="#0B132B">
+</head>
+<body>
+  <!-- Loader -->
+  <div id="loader" class="loader">
+    <div class="spinner"></div>
+  </div>
+
+  <!-- Custom cursor -->
+  <div id="cursor" class="cursor"></div>
+
+  <!-- Canvas background -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- Navbar -->
+  <header class="nav glass" id="navbar">
+    <div class="container nav-inner">
+      <div class="brand">
+        <i class="fa-solid fa-microchip"></i>
+        <span>Portafolio Académico</span>
+      </div>
+      <nav>
+        <a href="#home">🏠 Inicio</a>
+        <a href="#unidad1">📘 Unidad 1</a>
+        <a href="#unidad2">📙 Unidad 2</a>
+        <a href="#unidad3">📗 Unidad 3</a>
+        <a href="#redes">🌐 Redes Sociales</a>
+        <button id="theme-toggle" class="btn-theme" aria-label="Toggle Theme">☀️/🌙</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section id="home" class="hero">
+      <div class="container hero-inner">
+        <div class="card hero-card aos" data-aos="fade-up">
+          <div class="hero-top">
+            <h1 id="uni" contenteditable="true">UNIVERSIDAD TÉCNICA DE COTOPAXI</h1>
+            <h2 id="port" contenteditable="true">PORTAFOLIO ACADÉMICO</h2>
+          </div>
+          <div class="hero-body">
+            <div class="profile">
+              <img src="img/profile.svg" alt="Foto de perfil" id="profile-img">
+            </div>
+            <div class="info">
+              <p><strong>Nombre:</strong> <span id="name" contenteditable="true">Lenin Toaquiza</span></p>
+              <p><strong>Carrera:</strong> <span id="career" contenteditable="true">Ingeniería en Software</span></p>
+              <p><strong>Materia:</strong> <span id="course" contenteditable="true">Programación Básica y Algoritmia</span></p>
+              <p><strong>Docente:</strong> <span id="teacher" contenteditable="true">René Quizaguano</span></p>
+            </div>
+          </div>
+          <div class="hero-footer">
+            <div class="meta">
+              <div class="clock">⏰ <span id="clock">--:--:--</span></div>
+              <div class="date">📅 <span id="date">--/--/----</span></div>
+              <div class="visits">👁️ <span id="visits">0</span> visitas</div>
+            </div>
+            <div class="actions">
+              <a href="#unidad1" class="btn btn-glow">Ver Unidad 1</a>
+              <a href="#redes" class="btn btn-outline">Redes Sociales</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Biografía -->
+    <section id="bio" class="section container">
+      <div class="card bio-card aos" data-aos="fade-right">
+        <div class="bio-left">
+          <h3>Biografía</h3>
+          <p id="bio-text" contenteditable="true">Soy Lenin Toaquiza, estudiante de Ingeniería en Software en la Universidad Técnica de Cotopaxi. Me apasiona la programación, el desarrollo de software y la creación de soluciones tecnológicas. Durante este año académico he fortalecido mis conocimientos en Programación Básica y Algoritmia mediante la realización de ejercicios, prácticas y proyectos. Este portafolio reúne las actividades desarrolladas durante las tres unidades de la asignatura y refleja mi crecimiento académico y profesional.</p>
+        </div>
+        <div class="bio-right">
+          <label class="file-uploader">
+            <input type="file" id="profileUpload" accept="image/*">
+            <span class="btn">Cambiar Foto</span>
+          </label>
+        </div>
+      </div>
+    </section>
+
+    <!-- Calificación -->
+    <section id="rating" class="section container">
+      <h3 class="section-title aos" data-aos="fade-up">CALIFICACIÓN DE LAS UNIDADES</h3>
+      <div class="ratings aos" data-aos="fade-up">
+        <div class="rating-card">
+          <h4>Unidad 1</h4>
+          <div class="stars" data-unit="1"></div>
+        </div>
+        <div class="rating-card">
+          <h4>Unidad 2</h4>
+          <div class="stars" data-unit="2"></div>
+        </div>
+        <div class="rating-card">
+          <h4>Unidad 3</h4>
+          <div class="stars" data-unit="3"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Unidades -->
+    <section id="unidad1" class="section container">
+      <h3 class="section-title aos" data-aos="fade-up">UNIDAD 1</h3>
+      <div class="unit-grid aos" data-aos="fade-up">
+        <div class="unit-card">
+          <h4 contenteditable="true">Título de la Unidad 1</h4>
+          <p contenteditable="true">Descripción editable de la Unidad 1. Agrega aquí objetivos y contenidos.</p>
+          <div class="files">
+            <label>Subir PDF: <input type="file" data-unit-file="u1-pdf" accept="application/pdf"></label>
+            <label>Subir Word: <input type="file" data-unit-file="u1-doc" accept="application/msword, application/vnd.openxmlformats-officedocument.wordprocessingml.document"></label>
+            <label>Subir PowerPoint: <input type="file" data-unit-file="u1-ppt" accept="application/vnd.ms-powerpoint, application/vnd.openxmlformats-officedocument.presentationml.presentation"></label>
+          </div>
+          <div class="gallery" id="u1-gallery"></div>
+          <p><strong>Observaciones:</strong> <span contenteditable="true">Aquí puedes anotar observaciones.</span></p>
+          <p><strong>Fecha:</strong> <span contenteditable="true">--/--/----</span></p>
+          <p><strong>Conclusión:</strong> <span contenteditable="true">Escribe la conclusión de la unidad.</span></p>
+        </div>
+        <div class="unit-side">
+          <h4>Progreso Unidad 1</h4>
+          <input type="range" id="progress-u1" min="0" max="100" value="0">
+          <div class="progress-bar"><div id="bar-u1" style="width:0%"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="unidad2" class="section container">
+      <h3 class="section-title aos" data-aos="fade-up">UNIDAD 2</h3>
+      <div class="unit-grid aos" data-aos="fade-up">
+        <div class="unit-card">
+          <h4 contenteditable="true">Título de la Unidad 2</h4>
+          <p contenteditable="true">Descripción editable de la Unidad 2.</p>
+          <div class="files">
+            <label>Subir PDF: <input type="file" data-unit-file="u2-pdf" accept="application/pdf"></label>
+          </div>
+          <p><strong>Prácticas:</strong> <span contenteditable="true">Lista de prácticas</span></p>
+          <p><strong>Ejercicios:</strong> <span contenteditable="true">Descripción de ejercicios</span></p>
+          <p><strong>Comentarios:</strong> <span contenteditable="true">Comentarios</span></p>
+        </div>
+        <div class="unit-side">
+          <h4>Progreso Unidad 2</h4>
+          <input type="range" id="progress-u2" min="0" max="100" value="0">
+          <div class="progress-bar"><div id="bar-u2" style="width:0%"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="unidad3" class="section container">
+      <h3 class="section-title aos" data-aos="fade-up">UNIDAD 3</h3>
+      <div class="unit-grid aos" data-aos="fade-up">
+        <div class="unit-card">
+          <h4 contenteditable="true">Proyecto Final</h4>
+          <p contenteditable="true">Descripción del proyecto final.</p>
+          <div class="files">
+            <label>Subir Archivos: <input type="file" multiple data-unit-file="u3-files"></label>
+          </div>
+          <div class="gallery" id="u3-gallery"></div>
+          <p><strong>Videos:</strong> <span contenteditable="true">Agrega enlaces de video aquí</span></p>
+          <p><strong>Conclusiones:</strong> <span contenteditable="true">Conclusiones del proyecto</span></p>
+          <p><strong>Reflexión final:</strong> <span contenteditable="true">Reflexión</span></p>
+        </div>
+        <div class="unit-side">
+          <h4>Progreso Unidad 3</h4>
+          <input type="range" id="progress-u3" min="0" max="100" value="0">
+          <div class="progress-bar"><div id="bar-u3" style="width:0%"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Redes Sociales -->
+    <section id="redes" class="section container">
+      <h3 class="section-title aos" data-aos="fade-up">REDES SOCIALES</h3>
+      <div class="social-grid aos" data-aos="fade-up">
+        <!-- Template card -->
+        <div class="social-card" data-link="https://facebook.com" data-name="Facebook">
+          <i class="fab fa-facebook-f"></i>
+          <h4>Facebook</h4>
+          <a class="btn" target="_blank" rel="noopener noreferrer">Abrir</a>
+          <input class="social-input" placeholder="Enlace editable" value="https://facebook.com">
+        </div>
+        <div class="social-card" data-link="https://instagram.com" data-name="Instagram">
+          <i class="fab fa-instagram"></i>
+          <h4>Instagram</h4>
+          <a class="btn" target="_blank" rel="noopener noreferrer">Abrir</a>
+          <input class="social-input" placeholder="Enlace editable" value="https://instagram.com">
+        </div>
+        <div class="social-card" data-link="https://github.com" data-name="GitHub">
+          <i class="fab fa-github"></i>
+          <h4>GitHub</h4>
+          <a class="btn" target="_blank" rel="noopener noreferrer">Abrir</a>
+          <input class="social-input" placeholder="Enlace editable" value="https://github.com">
+        </div>
+        <div class="social-card" data-link="https://linkedin.com" data-name="LinkedIn">
+          <i class="fab fa-linkedin-in"></i>
+          <h4>LinkedIn</h4>
+          <a class="btn" target="_blank" rel="noopener noreferrer">Abrir</a>
+          <input class="social-input" placeholder="Enlace editable" value="https://linkedin.com">
+        </div>
+        <div class="social-card" data-link="https://tiktok.com" data-name="TikTok">
+          <i class="fab fa-tiktok"></i>
+          <h4>TikTok</h4>
+          <a class="btn" target="_blank" rel="noopener noreferrer">Abrir</a>
+          <input class="social-input" placeholder="Enlace editable" value="https://tiktok.com">
+        </div>
+        <div class="social-card" data-link="mailto:tu@correo.com" data-name="Correo">
+          <i class="fa-solid fa-envelope"></i>
+          <h4>Correo</h4>
+          <a class="btn" target="_blank" rel="noopener noreferrer">Abrir</a>
+          <input class="social-input" placeholder="Enlace editable" value="mailto:tu@correo.com">
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Back to top -->
+  <button id="topBtn" class="top-btn" aria-label="Volver arriba"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <!-- Footer -->
+  <footer class="footer glass">
+    <div class="container footer-inner">
+      <div>
+        <strong>UNIVERSIDAD TÉCNICA DE COTOPAXI</strong>
+        <div>Portafolio Académico</div>
+      </div>
+      <div>
+        <div>Desarrollado por: <strong id="author" contenteditable="true">Lenin Toaquiza</strong></div>
+        <div>Ingeniería en Software - 2026</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/particles.js"></script>
+  <script src="js/stars.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+/* responsive.css */
+@media (max-width:600px){
+  .nav{left:8px;right:8px;top:8px}
+  .nav nav a{display:none}
+  .nav .brand span{display:none}
+  .hero-card{padding:.8rem}
+  .profile img{width:88px;height:88px}
+  .container{padding:0 1rem}
+}
