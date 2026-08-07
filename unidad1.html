@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Unidad 1 - Portafolio Académico</title>
+  <meta name="description" content="Unidad 1 de Programación Básica" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <meta name="theme-color" content="#0B132B">
+</head>
+<body>
+  <div id="loader" class="loader"><div class="spinner"></div></div>
+  <div id="cursor" class="cursor"></div>
+  <canvas id="bg-canvas"></canvas>
+
+  <header class="nav glass" id="navbar">
+    <div class="container nav-inner">
+      <div class="brand"><i class="fa-solid fa-microchip"></i><span>Portafolio Académico</span></div>
+      <nav>
+        <a href="index.html">🏠 Inicio</a>
+        <a href="unidad1.html">📘 Unidad 1</a>
+        <a href="unidad2.html">📙 Unidad 2</a>
+        <a href="unidad3.html">📗 Unidad 3</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section container">
+      <h3 class="section-title aos aos-animate" data-aos="fade-up">UNIDAD 1</h3>
+      <div class="card aos aos-animate" data-aos="fade-up">
+        <h4>Fundamentos de la Programación</h4>
+        <p>Resumen rápido: conceptos esenciales que necesitas para entender cómo funciona una computadora y cómo programar.</p>
+
+        <!-- Summary grid (like the image) -->
+        <div class="summary-grid">
+          <a href="#topic-hw-sof" class="summary-card s1" aria-label="Hardware y Software resumen">
+            <div class="badge">1</div>
+            <i class="card-icon fa-solid fa-microchip" aria-hidden="true"></i>
+            <div class="title">Hardware & Software</div>
+            <div class="mini">Diferencia entre lo físico y lo que corre en la máquina.</div>
+            <div class="overlay"><div class="overlay-text">Conceptos clave, ejemplos y ejercicios. <span class="see">Ver más</span></div></div>
+          </a>
+
+          <a href="#topic-arch" class="summary-card s2" aria-label="Modelos Von Neumann y Harvard resumen">
+            <div class="badge">2</div>
+            <i class="card-icon fa-solid fa-layer-group" aria-hidden="true"></i>
+            <div class="title">Modelos Von Neumann / Harvard</div>
+            <div class="mini">Cómo la memoria organiza datos e instrucciones.</div>
+            <div class="overlay"><div class="overlay-text">Resumen comparativo y cuándo se usa cada modelo. <span class="see">Ver más</span></div></div>
+          </a>
+
+          <a href="#topic-so" class="summary-card s3" aria-label="Sistemas Operativos resumen">
+            <div class="badge">3</div>
+            <i class="card-icon fa-solid fa-desktop" aria-hidden="true"></i>
+            <div class="title">Sistemas Operativos</div>
+            <div class="mini">Funciones básicas: memoria, procesos y dispositivos.</div>
+            <div class="overlay"><div class="overlay-text">Funciones principales del SO y ejemplos prácticos. <span class="see">Ver más</span></div></div>
+          </a>
+
+          <a href="#topic-numbers" class="summary-card s4" aria-label="Sistemas de numeración resumen">
+            <div class="badge">4</div>
+            <i class="card-icon fa-solid fa-calculator" aria-hidden="true"></i>
+            <div class="title">Sistemas de Numeración & Álgebra</div>
+            <div class="mini">Binario, conversiones y lógica booleana.</div>
+            <div class="overlay"><div class="overlay-text">Conversiones rápidas, reglas y ejercicios. <span class="see">Ver más</span></div></div>
+          </a>
+
+          <a href="#topic-bool" class="summary-card s5" aria-label="Álgebra de Boole resumen">
+            <div class="badge">5</div>
+            <i class="card-icon fa-solid fa-brain" aria-hidden="true"></i>
+            <div class="title">Álgebra de Boole</div>
+            <div class="mini">Lógica, tablas de verdad y puertas lógicas.</div>
+            <div class="overlay"><div class="overlay-text">Operadores AND/OR/NOT, ejemplos y tablas. <span class="see">Ver más</span></div></div>
+          </a>
+        </div>
+
+        <div class="actions" style="margin-top:1rem;">
+          <button id="open-exercises" class="btn btn-glow">Abrir ejercicios</button>
+        </div>
+
+        <hr>
+
+        <!-- Detailed topics -->
+        <div class="topic collapsed" id="topic-hw-sof">
+          <div class="topic-header">
+            <h5>Hardware y Software</h5>
+            <button class="close-topic btn" aria-label="Cerrar tema">Cerrar</button>
+          </div>
+          <div class="topic-body">
+            <div class="editable" data-key="topic-hw-sof-desc">El hardware es lo físico: teclado, pantalla, memoria y procesador. El software es lo que corre en ese hardware: aplicaciones, juegos y sistemas.</div>
+          <ul>
+            <li><strong>Hardware:</strong> tangible y eléctrico.</li>
+            <li><strong>Software:</strong> intangible y actualizable.</li>
+          </ul>
+          <p><strong>Ejemplo:</strong> el teclado es hardware y el procesador de texto es software.</p>
+          <p><strong>¿Sabías que...</strong> el primer algoritmo para una máquina fue escrito por Ada Lovelace en 1843?</p>
+            <p><strong>Resumen:</strong> El hardware es el cuerpo; el software es el cerebro.</p>
+            <p><strong>Recursos:</strong> busca "hardware vs software" para intro rápida.</p>
+          </div>
+        </div>
+
+        <div class="topic collapsed" id="topic-arch">
+          <div class="topic-header">
+            <h5>Modelos Von Neumann y Harvard</h5>
+            <button class="close-topic btn" aria-label="Cerrar tema">Cerrar</button>
+          </div>
+          <div class="topic-body">
+            <div class="editable" data-key="topic-arch-desc">Von Neumann guarda datos e instrucciones juntos en una sola memoria. Harvard guarda cada uno en memorias distintas.</div>
+          <table>
+            <tr><th>Von Neumann</th><th>Harvard</th></tr>
+            <tr><td>Una sola memoria</td><td>Dos memorias</td></tr>
+            <tr><td>Más simple</td><td>Más rápido en algunos casos</td></tr>
+          </table>
+          <p><strong>Ejemplo:</strong> Von Neumann es como usar un solo cuaderno para apuntes y recetas; Harvard es como usar dos cuadernos distintos.</p>
+          <p><strong>¿Sabías que...</strong> muchos microcontroladores usan Harvard para trabajar más rápido?</p>
+            <p><strong>Resumen:</strong> Von Neumann es común y fácil; Harvard es más seguro y rápido para ciertas máquinas.</p>
+            <p><strong>Recursos:</strong> revisa comparativos de arquitectura para entender ejemplos prácticos.</p>
+          </div>
+        </div>
+
+        <div class="topic collapsed" id="topic-so">
+          <div class="topic-header">
+            <h5>Sistemas Operativos</h5>
+            <button class="close-topic btn" aria-label="Cerrar tema">Cerrar</button>
+          </div>
+          <div class="topic-body">
+            <div class="editable" data-key="topic-so-desc">El sistema operativo es el programa que controla la computadora. Administra programas, archivos y dispositivos como el teclado y la pantalla.</div>
+          <ul>
+            <li>Organiza las aplicaciones.</li>
+            <li>Maneja la memoria.</li>
+            <li>Controla el hardware.</li>
+          </ul>
+          <p><strong>¿Sabías que...</strong> el primer sistema operativo práctico apareció en 1956 en una IBM?</p>
+            <p><strong>Resumen:</strong> Sin sistema operativo no puedes usar la computadora de manera fácil.</p>
+            <p><strong>Recursos:</strong> consulta resúmenes de funciones del SO para ejemplos.</p>
+          </div>
+        </div>
+
+        <div class="topic collapsed" id="topic-numbers">
+          <div class="topic-header">
+            <h5>Sistemas de Numeración</h5>
+            <button class="close-topic btn" aria-label="Cerrar tema">Cerrar</button>
+          </div>
+          <div class="topic-body">
+            <div class="editable" data-key="topic-numbers-desc">Los números se escriben con distintas bases: binario (2), decimal (10), octal (8) y hexadecimal (16).</div>
+          <table>
+            <tr><th>Base</th><th>Dígitos</th></tr>
+            <tr><td>Binario</td><td>0, 1</td></tr>
+            <tr><td>Decimal</td><td>0–9</td></tr>
+            <tr><td>Octal</td><td>0–7</td></tr>
+            <tr><td>Hexadecimal</td><td>0–9, A–F</td></tr>
+          </table>
+          <p><strong>¿Sabías que...</strong> las computadoras usan binario porque solo distinguen encendido y apagado?</p>
+            <p><strong>Resumen:</strong> El binario es el lenguaje natural de las máquinas.</p>
+            <p><strong>Recursos:</strong> videos o ejercicios de conversión para practicar.</p>
+
+              <!-- Subsections: Conversiones y Aritmética Binaria dentro de Sistemas de Numeración -->
+              <div class="subtopic">
+                <h5>Conversiones entre bases</h5>
+                <p>Convertir es cambiar un número de una base a otra. Por ejemplo: 13 decimal = 1101 binario.</p>
+                <p><strong>Ejemplo:</strong> 1011₂ = 13 decimal y = B hexadecimal.</p>
+                <p><strong>Resumen:</strong> Las conversiones te ayudan a leer datos dentro de la computadora.</p>
+                <p><strong>Nota:</strong> practica con los ejercicios al final para afianzar conversiones.</p>
+              </div>
+
+              <div class="subtopic">
+                <h5>Aritmética Binaria</h5>
+                <p>La aritmética binaria usa solo 0 y 1. Algunas reglas son:</p>
+                <ul>
+                  <li>0 + 0 = 0</li>
+                  <li>0 + 1 = 1</li>
+                  <li>1 + 1 = 10</li>
+                </ul>
+                <p><strong>Ejemplo:</strong> 1010₂ + 0111₂ = 10001₂.</p>
+                <p><strong>Resumen:</strong> La CPU suma y resta usando ceros y unos.</p>
+                <p><strong>Recursos:</strong> busca "suma binaria" para practicar ejercicios interactivos.</p>
+              </div>
+            </div>
+          </div>
+
+        <div class="topic collapsed" id="topic-bool">
+          <div class="topic-header">
+            <h5>Álgebra de Boole</h5>
+            <button class="close-topic btn" aria-label="Cerrar tema">Cerrar</button>
+          </div>
+          <div class="topic-body">
+            <p>El álgebra de Boole usa valores verdadero/falso (1/0). Sus operadores son AND, OR y NOT.</p>
+            <ul>
+              <li><strong>AND:</strong> verdadero solo si ambos son verdaderos.</li>
+              <li><strong>OR:</strong> verdadero si al menos uno es verdadero.</li>
+              <li><strong>NOT:</strong> invierte el valor.</li>
+            </ul>
+            <p><strong>Ejemplo:</strong> A=1, B=0 → A AND B=0, A OR B=1.</p>
+            <p><strong>Resumen:</strong> Boole es la lógica que usan los circuitos para decidir.</p>
+            <p><strong>Recursos:</strong> busca guías de álgebra de Boole y tablas de verdad para practicar.</p>
+          </div>
+        </div>
+
+        <div class="topic collapsed" id="topic-exercises">
+          <div class="topic-header">
+            <h5>Ejercicios</h5>
+            <button class="close-topic btn" aria-label="Cerrar tema">Cerrar</button>
+          </div>
+          <div class="topic-body">
+            <ol>
+              <li>Convierte 25 decimal a binario, octal y hexadecimal.</li>
+              <li>Suma binaria: 1010₂ + 0111₂.</li>
+              <li>¿Von Neumann o Harvard si el código y los datos están separados?</li>
+            </ol>
+            <details>
+              <summary>Soluciones</summary>
+              <p>1. 11001₂, 31₈, 19₁₆.</p>
+              <p>2. 10001₂.</p>
+              <p>3. Harvard.</p>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <button id="topBtn" class="top-btn" aria-label="Volver arriba"><i class="fa-solid fa-arrow-up"></i></button>
+  <footer class="footer glass">
+    <div class="container footer-inner">
+      <div><strong>UNIVERSIDAD TÉCNICA DE COTOPAXI</strong><div>Portafolio Académico</div></div>
+      <div><div>Desarrollado por: <strong id="author">Lenin Toaquiza</strong></div><div>Ingeniería en Software - 2026</div></div>
+    </div>
+  </footer>
+
+  <script src="js/particles.js"></script>
+  <script src="js/stars.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

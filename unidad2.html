@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Unidad 2 - Portafolio Académico</title>
+  <meta name="description" content="Unidad 2 de Programación Básica" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <meta name="theme-color" content="#0B132B">
+</head>
+<body>
+  <div id="loader" class="loader"><div class="spinner"></div></div>
+  <div id="cursor" class="cursor"></div>
+  <canvas id="bg-canvas"></canvas>
+
+  <header class="nav glass" id="navbar">
+    <div class="container nav-inner">
+      <div class="brand"><i class="fa-solid fa-microchip"></i><span>Portafolio Académico</span></div>
+      <nav>
+        <a href="index.html">🏠 Inicio</a>
+        <a href="unidad1.html">📘 Unidad 1</a>
+        <a href="unidad2.html">📙 Unidad 2</a>
+        <a href="unidad3.html">📗 Unidad 3</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section container">
+      <h3 class="section-title aos" data-aos="fade-up">UNIDAD 2</h3>
+      <div class="card aos" data-aos="fade-up">
+        <h4>Algoritmos, Diagramas de Flujo y Pseudocódigo</h4>
+        <p>Antes de escribir un programa es necesario planificar la solución del problema. En esta unidad se aprende a diseñar algoritmos, representar procesos mediante diagramas de flujo y escribir pseudocódigo para resolver problemas de forma lógica y ordenada.</p>
+
+        <div class="summary-grid">
+          <a href="#topic-alg" class="summary-card s1" aria-label="Algoritmos resumen">
+            <div class="badge">1</div>
+            <i class="card-icon fa-solid fa-gear" aria-hidden="true"></i>
+            <div class="title">Algoritmos</div>
+            <div class="mini">Pasos ordenados para resolver problemas.</div>
+            <div class="overlay"><div class="overlay-text">Características, tipos y ejemplos de algoritmos. <span class="see">Ver más</span></div></div>
+          </a>
+
+          <a href="#topic-flow" class="summary-card s2" aria-label="Diagramas de flujo resumen">
+            <div class="badge">2</div>
+            <i class="card-icon fa-solid fa-diagram-project" aria-hidden="true"></i>
+            <div class="title">Diagramas de flujo</div>
+            <div class="mini">Representan visualmente cada paso del proceso.</div>
+            <div class="overlay"><div class="overlay-text">Símbolos, dirección y lógica de los diagramas. <span class="see">Ver más</span></div></div>
+          </a>
+
+          <a href="#topic-pseudo" class="summary-card s3" aria-label="Pseudocódigo resumen">
+            <div class="badge">3</div>
+            <i class="card-icon fa-solid fa-file-lines" aria-hidden="true"></i>
+            <div class="title">Pseudocódigo</div>
+            <div class="mini">Texto estructurado que describe la solución.</div>
+            <div class="overlay"><div class="overlay-text">Sintaxis simple y ejemplos para planificar código. <span class="see">Ver más</span></div></div>
+          </a>
+
+          <a href="#topic-model" class="summary-card s4" aria-label="Modelado de problemas resumen">
+            <div class="badge">4</div>
+            <i class="card-icon fa-solid fa-sitemap" aria-hidden="true"></i>
+            <div class="title">Modelado de problemas</div>
+            <div class="mini">Identificar datos, condiciones y resultados.</div>
+            <div class="overlay"><div class="overlay-text">Cómo estructurar el problema antes de programar. <span class="see">Ver más</span></div></div>
+          </a>
+        </div>
+
+        <div class="actions" style="margin-top:1rem;">
+          <button id="open-exercises" class="btn btn-glow">Abrir ejercicios</button>
+        </div>
+
+        <hr>
+
+        <div class="topic collapsed" id="topic-alg">
+          <div class="topic-header">
+            <h5>Algoritmos</h5>
+            <button class="close-topic btn" aria-label="Cerrar tema">Cerrar</button>
+          </div>
+          <div class="topic-body">
+            <p>Un algoritmo es un conjunto de instrucciones ordenadas que describen cómo resolver un problema paso a paso. Debe ser claro, finito y efectivo.</p>
+            <ul>
+              <li>Entrada y salida definidas.</li>
+              <li>Pasos ordenados y no ambiguos.</li>
+              <li>Debe terminar después de un número finito de pasos.</li>
+            </ul>
+            <p><strong>Ejemplo:</strong> calcular el área de un cuadrado usando un algoritmo simple.</p>
+          </div>
+        </div>
+
+        <div class="topic collapsed" id="topic-flow">
+          <div class="topic-header">
+            <h5>Diagramas de flujo</h5>
+            <button class="close-topic btn" aria-label="Cerrar tema">Cerrar</button>
+          </div>
+          <div class="topic-body">
+            <p>Los diagramas de flujo representan visualmente los pasos de un algoritmo usando símbolos conectados por flechas. Facilitan la comprensión y el diseño del proceso.</p>
+            <ul>
+              <li>Inicio / fin.</li>
+              <li>Procesos y decisiones.</li>
+              <li>Entradas y salidas.</li>
+            </ul>
+            <p><strong>Ejemplo:</strong> diagrama de flujo que calcula el área de un cuadrado a partir del lado.</p>
+          </div>
+        </div>
+
+        <div class="topic collapsed" id="topic-pseudo">
+          <div class="topic-header">
+            <h5>Pseudocódigo</h5>
+            <button class="close-topic btn" aria-label="Cerrar tema">Cerrar</button>
+          </div>
+          <div class="topic-body">
+            <p>El pseudocódigo usa instrucciones en lenguaje natural estructurado para describir un algoritmo. Es una guía para escribir el programa en un lenguaje real.</p>
+            <pre>Inicio
+Leer lado
+area = lado × lado
+Mostrar area
+Fin</pre>
+            <p>Es fácil de leer y se usa antes de escribir código real.</p>
+          </div>
+        </div>
+
+        <div class="topic collapsed" id="topic-model">
+          <div class="topic-header">
+            <h5>Modelado de problemas</h5>
+            <button class="close-topic btn" aria-label="Cerrar tema">Cerrar</button>
+          </div>
+          <div class="topic-body">
+            <p>Modelar un problema significa identificar qué datos se usan, cuáles son las operaciones necesarias y cuál es el resultado esperado. Esto ayuda a preparar soluciones más claras.</p>
+            <ul>
+              <li>Analizar el problema.</li>
+              <li>Definir variables y condiciones.</li>
+              <li>Planificar la solución antes de programar.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="topic collapsed" id="topic-exercises">
+          <div class="topic-header">
+            <h5>Ejercicios</h5>
+            <button class="close-topic btn" aria-label="Cerrar tema">Cerrar</button>
+          </div>
+          <div class="topic-body">
+            <ol>
+              <li>Define los pasos para resolver el área de un rectángulo con pseudocódigo.</li>
+              <li>Dibuja un diagrama de flujo para un algoritmo que determine si un número es par o impar.</li>
+              <li>Identifica las entradas y salidas para un problema de conversión de unidades.</li>
+            </ol>
+            <details>
+              <summary>Soluciones</summary>
+              <p>1. Inicio, leer base, leer altura, area = base × altura, mostrar area, fin.</p>
+              <p>2. Inicio → leer número → decisión par/impar → mostrar resultado → fin.</p>
+              <p>3. Entradas: valor y unidad; salida: valor convertido.</p>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <button id="topBtn" class="top-btn" aria-label="Volver arriba"><i class="fa-solid fa-arrow-up"></i></button>
+  <footer class="footer glass">
+    <div class="container footer-inner">
+      <div><strong>UNIVERSIDAD TÉCNICA DE COTOPAXI</strong><div>Portafolio Académico</div></div>
+      <div><div>Desarrollado por: <strong id="author">Lenin Toaquiza</strong></div><div>Ingeniería en Software - 2026</div></div>
+    </div>
+  </footer>
+
+  <script src="js/particles.js"></script>
+  <script src="js/stars.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

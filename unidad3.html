@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Unidad 3 - Portafolio Académico</title>
+  <meta name="description" content="Unidad 3 de Programación Básica" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <meta name="theme-color" content="#0B132B">
+</head>
+<body>
+  <div id="loader" class="loader"><div class="spinner"></div></div>
+  <div id="cursor" class="cursor"></div>
+  <canvas id="bg-canvas"></canvas>
+
+  <header class="nav glass" id="navbar">
+    <div class="container nav-inner">
+      <div class="brand"><i class="fa-solid fa-microchip"></i><span>Portafolio Académico</span></div>
+      <nav>
+        <a href="index.html">🏠 Inicio</a>
+        <a href="unidad1.html">📘 Unidad 1</a>
+        <a href="unidad2.html">📙 Unidad 2</a>
+        <a href="unidad3.html">📗 Unidad 3</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section container">
+      <h3 class="section-title aos" data-aos="fade-up">UNIDAD 3</h3>
+      <div class="card aos" data-aos="fade-up">
+        <h4>Programación</h4>
+        <p>En esta unidad se desarrolla la programación utilizando Python. Se aprenden los operadores, las estructuras condicionales y repetitivas para crear programas capaces de resolver problemas cotidianos.</p>
+
+        <div class="summary-grid">
+          <a href="#topic-lang" class="summary-card s1" aria-label="Lenguajes de programación resumen">
+            <div class="badge">1</div>
+            <i class="card-icon fa-solid fa-code" aria-hidden="true"></i>
+            <div class="title">Lenguajes de programación</div>
+            <div class="mini">Herramientas para darle instrucciones a la computadora.</div>
+            <div class="overlay"><div class="overlay-text">Tipos de lenguajes y su aplicación en desarrollo. <span class="see">Ver más</span></div></div>
+          </a>
+
+          <a href="#topic-paradigm" class="summary-card s2" aria-label="Paradigmas de programación resumen">
+            <div class="badge">2</div>
+            <i class="card-icon fa-solid fa-layer-group" aria-hidden="true"></i>
+            <div class="title">Paradigmas de programación</div>
+            <div class="mini">Formas de organizar la lógica en el código.</div>
+            <div class="overlay"><div class="overlay-text">Imperativo, orientado a objetos y otros paradigmas. <span class="see">Ver más</span></div></div>
+          </a>
+
+          <a href="#topic-python" class="summary-card s3" aria-label="Introducción a Python resumen">
+            <div class="badge">3</div>
+            <i class="card-icon fa-brands fa-python" aria-hidden="true"></i>
+            <div class="title">Introducción a Python</div>
+            <div class="mini">Lenguaje claro y fácil para iniciar en programación.</div>
+            <div class="overlay"><div class="overlay-text">Sintaxis simple, ejemplos básicos y estructura de programas. <span class="see">Ver más</span></div></div>
+          </a>
+
+          <a href="#topic-ops" class="summary-card s4" aria-label="Operadores y estructuras resumen">
+            <div class="badge">4</div>
+            <i class="card-icon fa-solid fa-square-root-variable" aria-hidden="true"></i>
+            <div class="title">Operadores y estructuras</div>
+            <div class="mini">Aritmética, comparación y control del flujo.</div>
+            <div class="overlay"><div class="overlay-text">Operadores, condicionales y ciclos para construir programas. <span class="see">Ver más</span></div></div>
+          </a>
+        </div>
+
+        <div class="actions" style="margin-top:1rem;">
+          <button id="open-exercises" class="btn btn-glow">Abrir ejercicios</button>
+        </div>
+
+        <hr>
+
+        <div class="topic collapsed" id="topic-lang">
+          <div class="topic-header">
+            <h5>Lenguajes de programación</h5>
+            <button class="close-topic btn" aria-label="Cerrar tema">Cerrar</button>
+          </div>
+          <div class="topic-body">
+            <p>Un lenguaje de programación es el medio para expresar instrucciones que una computadora puede ejecutar. Cada lenguaje tiene su propia sintaxis y enfoque.</p>
+            <ul>
+              <li>Existen lenguajes interpretados y compilados.</li>
+              <li>Algunos se usan para web, otros para datos o aplicaciones.</li>
+              <li>Python es ideal para aprender por su sintaxis clara.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="topic collapsed" id="topic-paradigm">
+          <div class="topic-header">
+            <h5>Paradigmas de programación</h5>
+            <button class="close-topic btn" aria-label="Cerrar tema">Cerrar</button>
+          </div>
+          <div class="topic-body">
+            <p>Los paradigmas son estilos de programación que definen cómo se estructura el código. Algunos paradigmas comunes son imperativo, orientado a objetos y funcional.</p>
+            <ul>
+              <li>Imperativo: instrucciones paso a paso.</li>
+              <li>Orientado a objetos: objetos con datos y comportamiento.</li>
+              <li>Funcional: funciones como elementos centrales.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="topic collapsed" id="topic-python">
+          <div class="topic-header">
+            <h5>Introducción a Python</h5>
+            <button class="close-topic btn" aria-label="Cerrar tema">Cerrar</button>
+          </div>
+          <div class="topic-body">
+            <p>Python es un lenguaje popular por su legibilidad y sintaxis sencilla. Es ideal para iniciar en programación y para desarrollar proyectos reales rápidamente.</p>
+            <pre>edad = 20
+
+if edad >= 18:
+    print("Mayor de edad")
+else:
+    print("Menor de edad")</pre>
+          </div>
+        </div>
+
+        <div class="topic collapsed" id="topic-ops">
+          <div class="topic-header">
+            <h5>Operadores y estructuras</h5>
+            <button class="close-topic btn" aria-label="Cerrar tema">Cerrar</button>
+          </div>
+          <div class="topic-body">
+            <p>Los operadores realizan cálculos y comparaciones. Las estructuras condicionales y repetitivas permiten tomar decisiones y repetir acciones en el programa.</p>
+            <ul>
+              <li>Operadores aritméticos: +, -, *, /.</li>
+              <li>Operadores relacionales: ==, !=, &gt;, &lt;.</li>
+              <li>Operadores lógicos: and, or, not.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="topic collapsed" id="topic-exercises">
+          <div class="topic-header">
+            <h5>Ejercicios</h5>
+            <button class="close-topic btn" aria-label="Cerrar tema">Cerrar</button>
+          </div>
+          <div class="topic-body">
+            <ol>
+              <li>Escribe un pseudocódigo que determine si un número es positivo, negativo o cero.</li>
+              <li>Indica qué operador relacional usarías para comparar si una edad es mayor o igual a 18.</li>
+              <li>Escribe un pequeño programa en Python que imprima los números del 1 al 5 usando un ciclo.</li>
+            </ol>
+            <details>
+              <summary>Soluciones</summary>
+              <p>1. Inicio, leer número, si número > 0 entonces mostrar "positivo"; else si número < 0 mostrar "negativo"; else mostrar "cero"; fin.</p>
+              <p>2. El operador relacional es >=.</p>
+              <p>3. for i in range(1, 6): print(i)</p>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <button id="topBtn" class="top-btn" aria-label="Volver arriba"><i class="fa-solid fa-arrow-up"></i></button>
+  <footer class="footer glass">
+    <div class="container footer-inner">
+      <div><strong>UNIVERSIDAD TÉCNICA DE COTOPAXI</strong><div>Portafolio Académico</div></div>
+      <div><div>Desarrollado por: <strong id="author">Lenin Toaquiza</strong></div><div>Ingeniería en Software - 2026</div></div>
+    </div>
+  </footer>
+
+  <script src="js/particles.js"></script>
+  <script src="js/stars.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
