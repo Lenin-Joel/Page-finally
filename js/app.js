@@ -6,44 +6,70 @@
   });
 
   // Visits counter
-  const visits = Number(localStorage.getItem('visits') || 0) + 1; localStorage.setItem('visits', visits); document.getElementById('visits').textContent = visits;
+  const visits = Number(localStorage.getItem('visits') || 0) + 1;
+  localStorage.setItem('visits', visits);
+  const visitsEl = document.getElementById('visits');
+  if (visitsEl) visitsEl.textContent = visits;
 
   // Clock & date
   function updateClock(){
     const d=new Date();
-    const t = d.toLocaleTimeString(); document.getElementById('clock').textContent=t;
-    document.getElementById('date').textContent = d.toLocaleDateString();
+    const t = d.toLocaleTimeString();
+    const clockEl = document.getElementById('clock');
+    const dateEl = document.getElementById('date');
+    if (clockEl) clockEl.textContent = t;
+    if (dateEl) dateEl.textContent = d.toLocaleDateString();
   }
-  setInterval(updateClock,1000); updateClock();
+  setInterval(updateClock,1000);
+  updateClock();
 
   // Back to top
-  const topBtn = document.getElementById('topBtn'); topBtn.addEventListener('click', ()=>window.scrollTo({top:0,behavior:'smooth'}));
-  window.addEventListener('scroll', ()=>{topBtn.style.display = window.scrollY>400 ? 'block' : 'none'});
+  const topBtn = document.getElementById('topBtn');
+  if (topBtn) {
+    topBtn.addEventListener('click', ()=>window.scrollTo({top:0,behavior:'smooth'}));
+    window.addEventListener('scroll', ()=>{topBtn.style.display = window.scrollY>400 ? 'block' : 'none'});
+  }
 
   // Custom cursor follow
-  const cursor = document.getElementById('cursor'); window.addEventListener('mousemove', e=>{cursor.style.left = e.clientX+'px'; cursor.style.top = e.clientY+'px'})
+  const cursor = document.getElementById('cursor');
+  if (cursor) {
+    window.addEventListener('mousemove', e=>{cursor.style.left = e.clientX+'px'; cursor.style.top = e.clientY+'px'});
+  }
 
   // Simple AOS - reveal when in view
   const aosEls = document.querySelectorAll('.aos');
-  const obs = new IntersectionObserver((entries)=>{
-    entries.forEach(en=>{ if(en.isIntersecting){ en.target.classList.add('aos-animate')} });
-  },{threshold:0.12});
-  aosEls.forEach(el=>obs.observe(el));
+  if ('IntersectionObserver' in window) {
+    const obs = new IntersectionObserver((entries)=>{
+      entries.forEach(en=>{ if(en.isIntersecting){ en.target.classList.add('aos-animate')} });
+    },{threshold:0.12});
+    aosEls.forEach(el=>obs.observe(el));
+  } else {
+    aosEls.forEach(el=>el.classList.add('aos-animate'));
+  }
 
   // Profile upload
-  const profileUpload = document.getElementById('profileUpload'); const profileImg = document.getElementById('profile-img');
-  profileUpload.addEventListener('change', async e=>{
-    const f = e.target.files[0]; if(!f) return; const data = await fileToDataURL(f); localStorage.setItem('profile-img', data); profileImg.src = data;
-  });
-  // load profile if exists
-  const prof = localStorage.getItem('profile-img'); if(prof) profileImg.src = prof;
+  const profileUpload = document.getElementById('profileUpload');
+  const profileImg = document.getElementById('profile-img');
+  if (profileUpload && profileImg) {
+    profileUpload.addEventListener('change', async e=>{
+      const f = e.target.files[0]; if(!f) return; const data = await fileToDataURL(f); localStorage.setItem('profile-img', data); profileImg.src = data;
+    });
+    const prof = localStorage.getItem('profile-img');
+    if(prof) profileImg.src = prof;
+  }
+
+  // Wire change photo button to hidden input
+  const changePhotoBtn = document.getElementById('changePhotoBtn');
+  if (changePhotoBtn && profileUpload) {
+    changePhotoBtn.addEventListener('click', ()=> profileUpload.click());
+  }
 
   // File uploads for units
   function fileToDataURL(file){return new Promise(res=>{const r=new FileReader();r.onload=()=>res(r.result);r.readAsDataURL(file)})}
 
   document.querySelectorAll('[data-unit-file]').forEach(inp=>{
     inp.addEventListener('change', async e=>{
-      const key = inp.dataset.unitFile; const files = Array.from(e.target.files);
+      const key = inp.dataset.unitFile; const files = Array.from(e.target.files || []);
       const list = JSON.parse(localStorage.getItem('files-'+key) || '[]');
       for(const f of files){ const data = await fileToDataURL(f); list.push({name:f.name,data}); }
       localStorage.setItem('files-'+key, JSON.stringify(list)); renderFiles(key);
@@ -68,11 +94,20 @@
 
   // Progress bars
   function bindProgress(id, barId){
-    const range = document.getElementById(id); const bar = document.getElementById(barId);
-    const stored = Number(localStorage.getItem(id) || 0); range.value = stored; bar.style.width = stored+'%';
-    range.addEventListener('input', ()=>{bar.style.width = range.value+'%'; localStorage.setItem(id, range.value)});
+    const range = document.getElementById(id);
+    const bar = document.getElementById(barId);
+    if (!range || !bar) return;
+    const stored = Number(localStorage.getItem(id) || 0);
+    range.value = stored;
+    bar.style.width = stored+'%';
+    range.addEventListener('input', ()=>{
+      bar.style.width = range.value+'%';
+      localStorage.setItem(id, range.value);
+    });
   }
-  bindProgress('progress-u1','bar-u1'); bindProgress('progress-u2','bar-u2'); bindProgress('progress-u3','bar-u3');
+  bindProgress('progress-u1','bar-u1');
+  bindProgress('progress-u2','bar-u2');
+  bindProgress('progress-u3','bar-u3');
 
   // Social links - open new tab
   document.querySelectorAll('.social-card').forEach(card=>{
@@ -94,6 +129,77 @@
     el.addEventListener('input', ()=> localStorage.setItem(key, el.innerHTML));
   });
 
+  // Unidad topics: open/close and persist editable topic bodies
+  document.querySelectorAll('.summary-card').forEach(card=>{
+    card.addEventListener('click', e=>{
+      e.preventDefault();
+      const href = card.getAttribute('href');
+      if(!href) return;
+      const id = href.replace('#','');
+      const topic = document.getElementById(id);
+      if(!topic) return;
+      // open topic
+      document.querySelectorAll('.topic').forEach(t=>{ t.classList.add('collapsed'); t.classList.remove('open'); });
+      topic.classList.remove('collapsed'); topic.classList.add('open');
+      // scroll into view
+      setTimeout(()=>{ topic.scrollIntoView({behavior:'smooth',block:'start'}); }, 80);
+      // focus first editable
+      const ed = topic.querySelector('.editable'); if(ed) ed.focus();
+    });
+  });
+
+  // Close buttons
+  document.querySelectorAll('.close-topic').forEach(btn=>{
+    btn.addEventListener('click', e=>{
+      const topic = btn.closest('.topic'); if(!topic) return;
+      topic.classList.add('collapsed'); topic.classList.remove('open');
+    });
+  });
+
+  // Open exercises button
+  const exercisesButton = document.getElementById('open-exercises');
+  if(exercisesButton){
+    exercisesButton.addEventListener('click', ()=>{
+      const topic = document.getElementById('topic-exercises');
+      if(!topic) return;
+      document.querySelectorAll('.topic').forEach(t=>{ t.classList.add('collapsed'); t.classList.remove('open'); });
+      topic.classList.remove('collapsed'); topic.classList.add('open');
+      setTimeout(()=>{ topic.scrollIntoView({behavior:'smooth',block:'start'}); }, 80);
+    });
+  }
+
+  // Persist topic editable areas by data-key
+  document.querySelectorAll('.topic .editable').forEach(el=>{
+    const key = el.dataset.key;
+    if(!key) return;
+    const stored = localStorage.getItem(key);
+    if(stored) el.innerHTML = stored;
+    el.addEventListener('input', ()=> localStorage.setItem(key, el.innerHTML));
+  });
+
   // Stars rendering invoked by stars.js (already persisted)
+
+  // Animated counters for new stats section
+  const counters = document.querySelectorAll('.stat-number');
+  const counterObserver = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        const el = entry.target;
+        const target = Number(el.dataset.target || 0);
+        const duration = 1200;
+        const start = performance.now();
+        const update = (now)=>{
+          const progress = Math.min((now - start) / duration, 1);
+          el.textContent = Math.floor(progress * target);
+          if(progress < 1) requestAnimationFrame(update);
+          else el.textContent = target;
+        };
+        requestAnimationFrame(update);
+        counterObserver.unobserve(el);
+      }
+    });
+  }, {threshold: 0.6});
+
+  counters.forEach(counter => counterObserver.observe(counter));
 
 })();
