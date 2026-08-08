@@ -8,6 +8,10 @@
   from{width:0}
   to{width:100%}
 }
+@keyframes pulseGlow {
+  0%,100%{opacity:.55;transform:scale(1)}
+  50%{opacity:.9;transform:scale(1.01)}
+}
 
 /* small helpers */
 .fade-in{animation:fadeIn 900ms ease both}
