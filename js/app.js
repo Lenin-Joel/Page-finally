@@ -47,23 +47,6 @@
     aosEls.forEach(el=>el.classList.add('aos-animate'));
   }
 
-  // Profile upload
-  const profileUpload = document.getElementById('profileUpload');
-  const profileImg = document.getElementById('profile-img');
-  if (profileUpload && profileImg) {
-    profileUpload.addEventListener('change', async e=>{
-      const f = e.target.files[0]; if(!f) return; const data = await fileToDataURL(f); localStorage.setItem('profile-img', data); profileImg.src = data;
-    });
-    const prof = localStorage.getItem('profile-img');
-    if(prof) profileImg.src = prof;
-  }
-
-  // Wire change photo button to hidden input
-  const changePhotoBtn = document.getElementById('changePhotoBtn');
-  if (changePhotoBtn && profileUpload) {
-    changePhotoBtn.addEventListener('click', ()=> profileUpload.click());
-  }
-
   // File uploads for units
   function fileToDataURL(file){return new Promise(res=>{const r=new FileReader();r.onload=()=>res(r.result);r.readAsDataURL(file)})}
 
